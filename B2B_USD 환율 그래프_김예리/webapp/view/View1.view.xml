@@ -1,0 +1,136 @@
+<mvc:View controllerName="sync08.zeafi050.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns:viz="sap.viz.ui5.controls" 
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data" 
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:svm="sap.ui.comp.smartvariants"
+    xmlns:cm="sap.suite.ui.commons"
+    height="100%"
+    >
+    <Page id="page" title="{i18n>title}">
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+            <fb:filterGroupItems>
+                <fb:FilterGroupItem name="DateRange" label="조회 기간" groupName="Group1" visibleInFilterBar="true">
+                    <fb:control>
+                        <DateRangeSelection
+                            id="idDateRangeSelection"
+                            name="DateRange"
+                            change=".onDateRangeChange"
+                            delimiter="-"
+                            placeholder="Select Date Range"
+                            
+                        />
+                    </fb:control>
+                </fb:FilterGroupItem>
+            </fb:filterGroupItems>
+        </fb:FilterBar>
+
+
+        <content>
+            <layout:FixFlex 
+                id="idFixFlex" 
+                minFlexSize="500">
+
+                <layout:fixContent>
+                    <!-- <Text text="항공사별 예약정보" /> -->
+                </layout:fixContent>
+                <layout:fixContent >
+                    <cm:ChartContainer 
+                        class="sapUiResponsiveContentPadding"
+                        id="idChartContainer"
+                        showFullScreen="true"
+                        showLegend="true"
+                        showLegendButton="true"
+                        showZoom="true"
+                        title="[FI] 일자별 환율 정보 및 변동 그래프"
+                        autoAdjustHeight="false"
+                        
+                    >
+                        <cm:content>
+                            <cm:ChartContainerContent 
+                                icon="sap-icon://bar-chart"
+                                title="차트" 
+                            >
+                                <cm:content>
+                                    <!-- 이 안에 차트를 그려줄 예정 -->
+                                    <viz:Popover id="idPopOver"></viz:Popover>
+                                    <viz:VizFrame id="idVizFrame" 
+                                        uiConfig="{applicationSet:'fiori'}"
+                                        height='500px' 
+                                        width="100%" 
+                                        vizType='line'
+                                        >
+                                        <!-- vizType을 'column' 으로 변경하면 Y 축 막대모양으로 나온다 -->
+                                        <!-- bar: 가로방향 막대모향 / column: 세로방향 막대모양-->
+
+                                        <viz:dataset>
+                                            <viz.data:FlattenedDataset data="{/TCURRSet}">
+                                                <!-- Define dimensions and measures -->
+                                                <viz.data:dimensions>
+                                                    <viz.data:DimensionDefinition name="환율효력일" value="{path: 'Gdatu'}" />
+                                                </viz.data:dimensions>
+                                                <viz.data:measures>
+                                                    <viz.data:MeasureDefinition name="환율" value="{Ukurs}" unit="원" />
+                                                    <viz.data:MeasureDefinition name="평균환율" value="{Average}" unit="원" />
+                                                </viz.data:measures>
+                                            </viz.data:FlattenedDataset>
+                                        </viz:dataset>
+
+                                        <viz:feeds>
+                                            <viz.feeds:FeedItem id='valueAxisFeed'    uid="valueAxis"    type="Measure"   values="환율" />
+                                            <viz.feeds:FeedItem id='valueAxisFeed2'    uid="valueAxis"    type="Measure"   values="평균환율" />
+                                            <viz.feeds:FeedItem id="categoryAxisFeed" uid="categoryAxis" type="Dimension" values="환율효력일" />
+                                            <!-- <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="항공편" /> -->
+                                        </viz:feeds>
+                                    </viz:VizFrame>
+                                </cm:content>
+                            </cm:ChartContainerContent>
+                            <cm:ChartContainerContent
+                                icon="sap-icon://table-view"
+                                title="데이터"
+                            >
+                                <cm:content>
+                                    <!-- 이 안에는 차트에 사용된 데이터를 테이블로 보여줄 예정 -->
+                                    <Table id="idTable" 
+                                        items="{ path: '/TCURRSet' }"
+                                    >
+                                        <columns>
+                                            <Column ><Label text="환율효력일"/></Column>
+                                            <Column ><Label text="기준통화" /></Column>
+                                            <Column ><Label text="변경통화"/></Column>
+                                            <Column ><Label text="환율"/></Column>
+                                            <Column ><Label text="평균환율"/></Column>
+                                            <Column ><Label text="평균대비"/></Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem
+                                            >
+                                                <ObjectAttribute  text="{Gdatu}" />
+                                                <ObjectIdentifier title="{Fcurr}" />
+                                                <ObjectIdentifier title="{Tcurr}"/>
+                                                <ObjectNumber number="{Ukurs}"/>
+                                                <ObjectNumber number="{Average}"/>
+                                                <ObjectStatus text="{= ${Differ} === '0.0' ? '유사함' : ${Differ} + '%' + ' ' + (${Ukurs} > ${Average} ? '높음' : '낮음') }"
+                                                              icon="{= ${Ukurs} > ${Average} ? 'sap-icon://navigation-up-arrow' : 'sap-icon://navigation-down-arrow' }"
+                                                              state="{= ${Ukurs} > ${Average} ? 'Error' : 'Success' }"
+                                                />
+
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </cm:content>
+                            </cm:ChartContainerContent>
+                        </cm:content>
+
+                    </cm:ChartContainer>
+                </layout:fixContent>
+
+            </layout:FixFlex>
+
+        </content>
+    </Page>
+</mvc:View>

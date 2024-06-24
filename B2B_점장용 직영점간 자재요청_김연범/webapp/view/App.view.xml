@@ -1,0 +1,20 @@
+<mvc:View controllerName="transporting.tfr.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:table="sap.ui.table">
+
+    <App id="app">
+        <f:FlexibleColumnLayout 
+            id="idFlexibleColumnLayout"
+            backgroundDesign="Solid"
+        >
+
+            <f:beginColumnPages>
+                <mvc:XMLView id="beginView" viewName="transporting.tfr.view.tfr"/>
+            </f:beginColumnPages>
+        
+        </f:FlexibleColumnLayout>
+    </App>
+</mvc:View>

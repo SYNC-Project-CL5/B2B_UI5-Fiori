@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../../vizframe"
+		},
+		{
+			"name": "sync.e17",
+			"path": "../.."
+		}
+	],
+	"settings": {}
+}

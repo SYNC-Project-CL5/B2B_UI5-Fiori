@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: sync.e17.inventory4
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: http://210.16.199.140:8001
+          client: "100"
+        app:
+          name: ZEA_E17_FI
+          description: 직영점 재고이전 결재
+          package: ZEA_FI
+          transport: KYSK903460
+        exclude:
+          - /test/

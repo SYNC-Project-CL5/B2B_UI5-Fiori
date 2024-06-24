@@ -1,0 +1,58 @@
+{
+	"customers": [
+		{
+			"name": "카런드샵",
+			"productId": "SB000502",
+			"lastPurchase": "2024.05.31",
+			"payment": "Received",
+			"state": "Success",
+			"amount": 47572800,
+			"currencyCode": "KRW"
+		},
+		{
+			"name": "오토스토어",
+			"productId": "SB000501",
+			"lastPurchase": "2024.05.30",
+			"payment": "Overdue",
+			"state": "Error",
+			"amount": 26165040,
+			"currencyCode": "KRW"
+		},
+		{
+			"name": "휠앤타이어",
+			"productId": "SB000500",
+			"lastPurchase": "2024.05.30",
+			"payment": "Pending",
+			"state": "Warning",
+			"amount": 4162620,
+			"currencyCode": "KRW"
+		},
+		{
+			"name": "로드스타일",
+			"productId": "SB000499",
+			"lastPurchase": "2024.05.29",
+			"payment": "Received",
+			"state": "Success",
+			"amount": 13082520,
+			"currencyCode": "KRW"
+		},
+		{
+			"name": "스피드스토어",
+			"productId": "SB000498",
+			"lastPurchase": "2024.05.28",
+			"payment": "Pending",
+			"state": "Warning",
+			"amount": 1783980,
+			"currencyCode": "KRW"
+		},
+		{
+			"name": "드라이브모션",
+			"productId": "SB000497",
+			"lastPurchase": "2024.05.28",
+			"payment": "Received",
+			"state": "Success",
+			"amount": 5946600,
+			"currencyCode": "KRW"
+		}
+	]
+}

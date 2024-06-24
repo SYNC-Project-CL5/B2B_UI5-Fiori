@@ -1,0 +1,49 @@
+<mvc:View controllerName="sync.ea.dispo.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <!-- 항공사 리스트를 위한 Panel -->
+            <Panel headerText="Production Order" expandable="false" expanded="true" height="500px" >
+                <Table 
+                    items="{/ZEA_PPCDSV02}"
+                    >
+                    <columns>
+                        <Column ><Label text="생산오더ID" />    </Column>
+                        <Column ><Label text="플랜트ID" /></Column>
+                        <Column ><Label text="자재코드" />  </Column>
+                        <Column ><Label text="자재명" />  </Column>
+                        <Column ><Label text="생산량" />  </Column>
+                        <Column ><Label text="예상시작일" />  </Column>
+                        <Column ><Label text="예상종료일" />  </Column>
+                        <Column ><Label text="생산시작일" />  </Column>
+                        <Column ><Label text="생산종료일" />  </Column>
+                        <Column ><Label text="검수완료일" />  </Column>
+                        <Column ><Label text="임시검수수량" />  </Column>
+                        <Column ><Label text="생산완료수량" />  </Column>
+                        <Column ><Label text="단위" />  </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem >
+                            <cells>
+                                <Text text="{Aufnr}"/>
+                                <Text text="{Werks}"/>
+                                <Text text="{Matnr}"/>
+                                <Text text="{Maktx}"/>
+                                <Text text="{Expqty}"/>
+                                <Text text="{path: 'Expsdate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+                                <Text text="{path: 'Expedate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+                                <Text text="{path: 'Sdate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+                                <Text text="{path: 'Edate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+                                <Text text="{path: 'Ispdate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+                                <Text text="{Repqty}"/>
+                                <Text text="{Rqty}"/>
+                                <Text text="{Unit}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

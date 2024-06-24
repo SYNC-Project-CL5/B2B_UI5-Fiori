@@ -1,0 +1,67 @@
+<mvc:View controllerName="sync.ea.login.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+
+    <Page title="㈜ ISOT 사원 로그인" id="loginpage" showNavButton="true" navButtonPress="onNavBack" class="background-page">
+        <content>
+            <VBox class="sapUiResponsiveMargin" alignItems="Center">
+                <!-- 이미지 Carousel 추가 -->
+                <VBox class="sapUiContentPadding" alignItems="Center">
+                    <!-- <Title text="Our Brands" level="H2" titleStyle="H1"/> -->
+                    <Carousel loop="true" showPageIndicator="true">
+                        <pages>
+                            <Image src="https://i.ibb.co/0ccwwbC/banner.png"/>
+                            <!-- <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_dynapro@2x.jpg" class="hover-zoom"/>
+                            <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_kinergy2.jpg" class="hover-zoom"/>
+                            <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_wintericeptipike@2x.jpg" class="hover-zoom"/>
+                            <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_vantra@2x.jpg" class="hover-zoom"/> -->
+                        </pages>
+                    </Carousel>
+                </VBox>             
+                
+                <Text text="" class="sapUiTinyMargin"/>                
+
+                <!-- Login 타이틀 추가 -->
+                <Text text="Login" class="loginTitle"/>
+
+                <!-- <Text text="" class="sapUiTinyMargin"/> -->
+                <Text text="" class="sapUiTinyMargin"/>
+
+                <!-- 두 문장을 VBox로 감싸서 두 줄로 표시 -->
+                <VBox class="sapUiSmallMarginTop" alignItems="Center" justifyContent="Center">
+                    <Title text="사원 전용 로그인 페이지입니다." level="H1" titleStyle="Bold" class="titleStyle"/>
+                    <Title text="사원번호와 비밀번호를 입력해주세요." level="H1" titleStyle="Bold" class="titleStyle"/>
+                </VBox>
+
+                <!-- 공간을 추가하기 위해 빈 Text 요소 사용 -->
+                <Text text="" class="sapUiSmallMargin"/>
+                
+                <!-- Panel 추가 -->
+                <Panel class="sapUiSmallMarginTop" headerText="로그인 정보 입력" headerToolbarClass="smallHeader">
+                    <VBox class="sapUiSmallMargin">
+                        <HBox class="sapUiSmallMarginTop" alignItems="Start">
+                            <Label text="사원번호 :" class="sapUiSmallMarginEnd" design="Bold"/>
+                            <Input id="EmpnumInput" type="Id" placeholder="사번 입력"/>    
+                        </HBox>
+
+                        <HBox class="sapUiSmallMarginTop" alignItems="Center">
+                            <Label text="비밀번호 :" class="sapUiSmallMarginEnd" design="Bold"/>
+                            <Input id="passwordInput" type="Password" placeholder="비밀번호 입력"/>
+                        </HBox>
+
+                        <Text text="" class="sapUiTinyMargin"/>
+                        <Text text="" class="sapUiTinyMargin"/>
+
+                        <!-- 로그인 버튼을 가운데로 정렬 -->
+                        <HBox class="sapUiSmallMarginTop" justifyContent="Center">
+                            <Button text="로그인" press="onSearch" icon="sap-icon://person-placeholder"/>
+                        </HBox>
+                    </VBox>
+                </Panel>                
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

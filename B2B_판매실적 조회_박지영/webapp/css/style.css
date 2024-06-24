@@ -1,0 +1,438 @@
+/* Enter your custom styles here */
+
+/* 웹 폰트 로드 (예시로 Noto Sans Korean 폰트 사용) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+/* 전체 애플리케이션에 폰트 적용 */
+body, html, .sapUiBody {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+}
+
+.verticalLayoutWithBackground {
+    background-color: #000; /* 검정색 배경 */
+    background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/kr/home/promotion/h318-2.jpg');
+    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 조정합니다 */
+    background-position: center; /* 배경 이미지를 중앙에 위치시킵니다 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정합니다 */
+    transition: background-color 0.3s ease, filter 0.3s ease; /* 투명도 변화에 애니메이션을 추가합니다 */
+    height: 35vh; /* 화면 높이의 35%로 설정합니다 */
+}
+
+
+.verticalLayoutWithBackground:hover {
+    background-image: url('https://www.nexentire.com/kr/assets/images/main.v2/recommend_02.jpg'); /* 호버될 때 새로운 이미지로 변경합니다 */
+    background-color:rgba(0, 0, 0, 0.041);
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다 */
+}
+
+.CELLTEXT {
+    margin-top: auto; /* 위쪽 여백을 자동으로 설정하여 상단에 정렬합니다. */
+    margin-bottom: 0; /* 아래쪽 여백을 0으로 설정하여 하단 정렬을 유지합니다. */
+    margin-left: 10; /* 왼쪽 여백을 자동으로 설정하여 우측 정렬을 합니다. */
+    margin-right: auto; /* 오른쪽 여백을 0으로 설정하여 우측 정렬을 유지합니다. */
+    font-size: 35px; /* 텍스트의 크기를 조정합니다. */
+    color: white; /* 텍스트의 색상을 검정색으로 설정합니다. */
+    font-weight: 600; /* 더 굵은 글꼴을 사용합니다. */
+}
+
+.verticalLayoutWithBackground:hover .CELLTEXT {
+    color: orange; /* 마우스 오버 시 글자 색상을 검정색으로 변경합니다. */
+}
+
+/*************************************************************************************************************/
+
+
+/* 전기차 일반 타이어 */
+.verticalLayoutWithBackground2 {
+    background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/kr/home/promotion/IH01a-1.jpg');
+    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 조정합니다 */
+    background-position: center; /* 배경 이미지를 중앙에 위치시킵니다 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정합니다 */
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 35vh;
+}
+
+.verticalLayoutWithBackground2:hover {
+	background-color: #000; /* 까만색(0,0,0) */
+    background-image: url('https://www.nexentire.com/kr/assets/images/main.v2/recommend_01.jpg'); /* 호버될 때 새로운 이미지로 변경합니다 */
+    background-color:rgba(0, 0, 0, 0.8);
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다 */
+}
+
+.verticalLayoutWithBackground2:hover .CELLTEXT {
+    color: orange; /* 마우스 오버 시 글자 색상을 검정색으로 변경합니다. */
+}
+/*************************************************************************************************************/
+
+
+/* 전기차 프리미엄 타이어 */
+.verticalLayoutWithBackground3 {
+    background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/kr/home/promotion/ik01-3new003.jpg');
+    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 조정합니다 */
+    background-position: center; /* 배경 이미지를 중앙에 위치시킵니다 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정합니다 */
+    height: 35vh;
+    transition: background-color 0.3s ease; /* 배경 색상 변화에 애니메이션을 추가합니다 */
+}
+
+.verticalLayoutWithBackground3:hover {
+    background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/kr/home/promotion/ra43-1.jpg'); /* 호버될 때 새로운 이미지로 변경합니다 */
+    background-color: rgb(0, 0, 0) !important; /* 배경 색상을 반투명 검정색으로 변경합니다 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다 */
+}
+
+.verticalLayoutWithBackground3:hover .CELLTEXT {
+    color: orange; /* 마우스 오버 시 글자 색상을 주황색으로 변경합니다. */
+}
+
+/*************************************************************************************************************/
+
+
+/* 일반차 프리미엄 타이어 */
+.verticalLayoutWithBackground4 {
+    background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/kr/home/promotion/h129-4.jpg');
+    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 조정합니다 */
+    background-position: center; /* 배경 이미지를 중앙에 위치시킵니다 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정합니다 */
+    height: 35vh;
+}
+
+.verticalLayoutWithBackground4:hover {
+	background-color: #000; /* 까만색(0,0,0) */
+    background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/local/img/tires/tires-kv/search-by-season/d_kv_112_3_Summer.jpg'); /* 호버될 때 새로운 이미지로 변경합니다 */
+    opacity: 0.7; /* 20% 불투명도 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다 */
+}
+
+.verticalLayoutWithBackground4:hover .CELLTEXT {
+    color: orange; /* 마우스 오버 시 글자 색상을 검정색으로 변경합니다. */
+}
+/*************************************************************************************************************/
+
+
+/* 일반차 프리미엄 타이어 */
+.verticalLayoutWithBackground5 {
+    background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/local/img/techinmotion/ventus_maintains_pc2.jpg');
+    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 조정합니다 */
+    background-position: center; /* 배경 이미지를 중앙에 위치시킵니다 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정합니다 */
+    height: 35vh;
+}
+
+.verticalLayoutWithBackground5:hover {
+	background-color: #000; /* 까만색(0,0,0) */
+    background-image: url('https://asset.hankooktire.com/content/dam/hankooktire/local/img/tires/tires-kv/search-by-season/d_kv_112_4_Winter.jpg'); /* 호버될 때 새로운 이미지로 변경합니다 */
+    opacity: 0.7; /* 20% 불투명도 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다 */
+}
+
+.verticalLayoutWithBackground5:hover .CELLTEXT {
+    color: orange; /* 마우스 오버 시 글자 색상을 검정색으로 변경합니다. */
+}
+/*************************************************************************************************************/
+
+
+.verticalLayoutWithBackground6 {
+    background-image: url('https://i.ibb.co/ccFSsMb/1-4x.png');
+    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 조정합니다 */
+    background-position: center; /* 배경 이미지를 중앙에 위치시킵니다 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정합니다 */
+    position: relative; /* 부모 요소를 상대적으로 위치시킵니다. */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다. */
+    overflow: hidden; /* 내부 요소가 벗어날 경우 가리도록 설정합니다. */
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    background-color: #000;
+}
+
+.verticalLayoutWithBackground6 {
+    position: relative; /* 부모 요소를 상대적으로 위치시킵니다. */
+    height: 50vh; /* 화면 높이의 35%로 설정합니다 */
+    overflow: hidden; /* 내부 요소가 벗어날 경우 가리도록 설정합니다. */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다. */
+}
+
+.verticalLayoutWithBackground6 .background-image {
+
+    object-fit: cover; /* 이미지가 비율을 유지하며 부모 요소에 맞게 조정됩니다. */
+    position: absolute; /* 이미지를 절대 위치로 설정합니다. */
+    top: 0; /* 상단에 위치시킵니다. */
+    left: 0; /* 왼쪽에 위치시킵니다. */
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.verticalLayoutWithBackground6 .TOPSUBBUTTON {
+    position: absolute; /* 버튼을 절대 위치로 설정합니다. */
+    bottom: 20px; /* 아래쪽 여백을 조정합니다. */
+    left: 50%; /* 가로 중앙에 위치시킵니다. */
+    transform: translateX(-50%); /* 좌표를 중앙으로 이동시킵니다. */
+    z-index: 1; /* 버튼을 내용 위에 표시하기 위해 z-index를 설정합니다. */
+    transition: transform 0.5s ease-in-out; /* 트랜지션을 추가합니다. */
+}
+
+.verticalLayoutWithBackground6 .TOPSUBBUTTON:hover {
+    transform: translate(-50%, -10px) scale(1.2); /* 버튼을 살짝 위로 이동하고 확대합니다. */
+}
+
+.TOPSUBBUTTON {
+    font-size: 30px; /* 버튼의 글자 크기를 조정합니다. */
+    color: black !important; /* 버튼의 텍스트 색상을 검정색으로 설정합니다. */
+    border: none; /* 외곽선을 제거합니다. */
+    padding: 10px 20px; /* 내부 여백을 조정합니다. */
+    background-color: transparent; /* 배경색을 투명하게 설정합니다. */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다. */
+}
+
+.TOPSUBBUTTON .sapUiIcon {
+    color: black; /* 아이콘의 색상을 검정색으로 설정합니다. */
+}
+
+.TOPSUBBUTTON .sapMBtnInner {
+    width: 300px; /* 버튼의 너비를 조정합니다. */
+}
+/*************************************************************************************************************/
+
+
+.verticalLayoutWithBackground7 {
+    background-image: url('https://www.tirerack.com/content/dam/tirerack/desktop/components/hero/s23_Home.jpg');
+    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 조정합니다 */
+    background-position: center; /* 배경 이미지를 중앙에 위치시킵니다 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정합니다 */
+    position: relative; /* 부모 요소를 상대적으로 위치시킵니다. */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다. */
+    overflow: hidden; /* 내부 요소가 벗어날 경우 가리도록 설정합니다. */
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    background-color: #000;
+}
+
+.verticalLayoutWithBackground7 {
+    position: relative; /* 부모 요소를 상대적으로 위치시킵니다. */
+    height: 50vh; /* 화면 높이의 35%로 설정합니다 */
+    overflow: hidden; /* 내부 요소가 벗어날 경우 가리도록 설정합니다. */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다. */
+}
+
+.verticalLayoutWithBackground7 .background-image {
+
+    object-fit: cover; /* 이미지가 비율을 유지하며 부모 요소에 맞게 조정됩니다. */
+    position: absolute; /* 이미지를 절대 위치로 설정합니다. */
+    top: 0; /* 상단에 위치시킵니다. */
+    left: 0; /* 왼쪽에 위치시킵니다. */
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/*************************************************************************************************************/
+
+
+.sapUiIcon.icon-white {
+    color: white !important; /* 아이콘의 색상을 흰색으로 설정합니다. */
+}
+
+.sapUiTinyMarginTopBottom2 {
+    position: absolute; /* 절대 위치로 설정합니다. */
+    bottom: 10px; /* 하단 여백을 조정합니다. */
+    left: 50%; /* 왼쪽 여백을 조정합니다. */
+    transform: translateX(-50%); /* 가운데 정렬합니다. */
+    font-size: 18px; /* 텍스트의 크기를 조정합니다. */
+    color: white; /* 텍스트 색상을 검정색으로 설정합니다. */
+}
+
+.TOPTEXT {
+    padding: 10px; /* 텍스트 주변에 패딩을 추가합니다. */
+    margin-top: auto; /* 위쪽 여백을 자동으로 설정하여 하단에 정렬합니다. */
+    margin-bottom: auto; /* 아래쪽 여백을 자동으로 설정하여 중앙에 정렬합니다. */
+    text-align: center; /* 텍스트를 가운데 정렬합니다. */
+    font-size: 50px; /* 텍스트의 크기를 조정합니다. */
+    color: white; /* 텍스트의 색상을 흰색으로 설정합니다. */
+}
+
+.TOPSUBTEXT {
+    padding: 10px; /* 텍스트 주변에 패딩을 추가합니다. */
+    margin-top: auto; /* 위쪽 여백을 자동으로 설정하여 하단에 정렬합니다. */
+    margin-bottom: auto; /* 아래쪽 여백을 자동으로 설정하여 중앙에 정렬합니다. */
+    text-align: center; /* 텍스트를 가운데 정렬합니다. */
+    font-size: 35px; /* 텍스트의 크기를 조정합니다. */
+    color: white; /* 텍스트의 색상을 흰색으로 설정합니다. */
+}
+
+/*************************************************************************************************************/
+.centerAlign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.imageText {
+    margin-top: auto; /* 이미지 하단에 위치하도록 설정 */
+}
+
+/*************************************************************************************************************/
+.customItem {
+    max-width: 25px; /* 원하는 너비로 설정 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    overflow: hidden; /* 넘치는 텍스트 숨기기 */
+    text-overflow: ellipsis; /* 넘치는 텍스트를 ...으로 표시 */
+}
+
+/*************************************************************************************************************/
+/* 타이어 그림 css */
+.customGenericTile {
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer; /* 마우스 커서를 포인터로 변경합니다 */
+}
+
+
+.customGenericTile2 {
+    color: orangered;
+}
+
+
+
+
+
+/* 흰배경 */
+.whiteBackgroundCell {
+    background-color: white;
+}
+
+/* 흰배경 */
+.whiteBackgroundCell2 {
+    background-color: white;
+    height: 10px;
+}
+/*************************************************************************************************************/
+/* 일반 버튼 css */
+.customButton .sapMBtnInner {
+    background-color: white !important;
+    color: rgb(94, 94, 94) !important; /* 텍스트 색상 설정 */
+    border-color: rgba(102, 102, 102, 0.123);
+}
+
+.customButton .sapMBtnInner:hover {
+    background-color: rgb(94, 94, 94) !important; /* 버튼 호버 색상 */
+    color: white !important; /* 텍스트 색상 설정 */
+}
+
+.customButton .sapMBtnInner:active {
+    background-color: white !important;
+    color: rgb(94, 94, 94) !important; /* 텍스트 색상 설정 */
+    border-color: rgba(102, 102, 102, 0.123);
+}
+
+/* 프리미엄 버튼 css */
+.customPreButton .sapMBtnInner {
+    background-color: white !important;
+    color: red  !important; /* 텍스트 색상 설정 */
+    border-width: 2px !important; /* 두꺼운 테두리 두께 */
+    border-style: solid !important; /* 테두리 스타일 */
+    border-color: red !important; /* 테두리 색상 */
+}
+
+.customPreButton .sapMBtnInner:hover {
+    background-color: red !important; /* 버튼 호버 색상 */
+    color: white !important; /* 텍스트 색상 설정 */
+}
+
+.customPreButton .sapMBtnInner:active {
+    background-color: white !important;
+    color: red  !important; /* 텍스트 색상 설정 */
+    border-width: 3px !important; /* 두꺼운 테두리 두께 */
+    border-style: inset !important; /* 테두리 스타일 */
+    border-color: red !important; /* 테두리 색상 */
+}
+
+/* 윈터 버튼 css */
+.customButtonWinter .sapMBtnInner {
+    background-color: white !important;
+    color: rgb(5, 159, 248)  !important; /* 텍스트 색상 설정 */
+    border-width: 2px !important; /* 두꺼운 테두리 두께 */
+    border-style: solid !important; /* 테두리 스타일 */
+    border-color: rgb(5, 159, 248) !important; /* 테두리 색상 */
+}
+
+.customButtonWinter .sapMBtnInner:hover {
+    background-color: rgb(5, 159, 248) !important; /* 버튼 호버 색상 */
+    color: white !important; /* 텍스트 색상 설정 */
+}
+
+.customButtonWinter .sapMBtnInner:active {
+    background-color: white !important;
+    color: rgb(5, 159, 248)  !important; /* 텍스트 색상 설정 */
+    border-width: 2px !important; /* 두꺼운 테두리 두께 */
+    border-style: solid !important; /* 테두리 스타일 */
+    border-color: rgb(5, 159, 248) !important; /* 테두리 색상 */
+}
+
+.customButtonGreen .sapMBtnInner {
+    background-color: white !important;
+    color: rgb(11, 175, 11)  !important; /* 텍스트 색상 설정 */
+    border-width: 2px !important; /* 두꺼운 테두리 두께 */
+    border-style: solid !important; /* 테두리 스타일 */
+    border-color: rgb(11, 175, 11) !important; /* 테두리 색상 */
+}
+
+.customButtonGreen .sapMBtnInner:hover {
+    background-color: rgb(11, 175, 11) !important; /* 버튼 호버 색상 */
+    color: white !important; /* 텍스트 색상 설정 */
+}
+
+.customButtonGreen .sapMBtnInner:active {
+    background-color: white !important;
+    color: rgb(11, 175, 11)  !important; /* 텍스트 색상 설정 */
+    border-width: 2px !important; /* 두꺼운 테두리 두께 */
+    border-style: solid !important; /* 테두리 스타일 */
+    border-color: rgb(11, 175, 11) !important; /* 테두리 색상 */
+}
+
+.image-container {
+    width: 50%; /* 이미지를 감싸고 있는 요소의 너비를 조절합니다. */
+}
+
+
+/*확대 호버 */
+.hover-zoom {
+    transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.1);
+}
+
+
+/* @font-face {
+    font-family: 'Y_Spotlight';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-face {
+    font-family: 'Y_Spotlight', sans-serif;
+} */
+
+
+
+@font-face {
+    font-family: 'Pretendard Variable';
+    src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css') format('css');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-normal {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: normal;
+}
+
+.font-medium {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 600;
+}
+
+.font-bold {
+    font-family: 'Pretendard-Bold', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 800;
+  }

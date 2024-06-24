@@ -1,0 +1,128 @@
+<mvc:View controllerName="sync.ea.afru.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:viz="sap.viz.ui5.controls" 
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:cm="sap.suite.ui.commons"
+    height="100%">
+
+    <Page id="page" title="{i18n>title}">
+        <headerContent>
+            <Text text="hi" ></Text>
+            <Button text="hi"></Button>
+        </headerContent>
+
+        
+
+        
+        <content>
+            
+            <layout:FixFlex 
+                id="idFixFlex" 
+                minFlexSize="500">
+
+                <layout:fixContent >
+                    <Text text="생산실적 조회" />
+                    <HBox class="separator">
+                        
+                        <VBox>
+
+                           
+                        </VBox>
+                    </HBox>
+                </layout:fixContent>
+                <layout:fixContent >
+                    <cm:ChartContainer 
+                        class="sapUiResponsiveContentPadding"
+                        id="idChartContainer"
+                        showFullScreen="true"
+                        showLegend="true"
+                        showLegendButton="true"
+                        showZoom="true"
+                        title="생산실적 차트 조회"
+                        autoAdjustHeight="false"
+                        
+                    >
+                        <cm:content>
+                            <cm:ChartContainerContent
+                                icon="sap-icon://table-view"
+                                title="데이터"
+                            >
+                            <cm:content>
+                                <!-- 이 안에는 차트에 사용된 데이터를 테이블로 보여줄 예정 -->
+                                <Table items="{/AFRUSet}" >
+                                    <columns>
+                                        <Column ><Label text="자재코드 &amp; 생산오더ID"/></Column>
+                                        <Column ><Label text="검수일자"/></Column>
+                                        <Column ><Label text="배치번호"/></Column>
+                                        <Column ><Label text="생산량"/></Column>
+                                        <Column ><Label text="폐기량"/></Column>
+                                        <Column ><Label text="최종 생산량"/></Column>
+                                        <Column ><Label text="폐기 사유"/></Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem >
+                                            <ObjectIdentifier title="{Matnr}" text="{Aufnr}" />
+                                            <ObjectIdentifier text="{Tsdat}" />
+                                            <ObjectIdentifier text="{Charg}" />
+                                            <!-- <ObjectNumber number="{path: 'Seatsmax', type: 'sap.ui.model.odata.type.Integer'}" unit="석" /> -->
+                                            <ObjectNumber number="{Pdquan}" unit="PKG" />
+                                            <ObjectNumber number="{Fnpd}" unit="PKG" />
+                                            <ObjectNumber number="{Pdban}" unit="PKG" />
+                                            <ObjectIdentifier text="{Defreason}"/>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </cm:content>
+                            </cm:ChartContainerContent>
+
+                            <cm:ChartContainerContent 
+                                icon="sap-icon://bar-chart"
+                                title="Chart" 
+                            >
+                                <cm:content>
+                                    <!-- 이 안에 차트를 그려줄 예정 -->
+                                    <viz:Popover id="idPopOver"></viz:Popover>
+                                    <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                                        height='500px' width="100%" vizType='column'>
+                                        <viz:dataset>
+                                            <viz.data:FlattenedDataset data="{/FiguresSet}">
+                                                <viz.data:dimensions>
+                                                    <viz.data:DimensionDefinition name="자재코드" value="{Maktx}" />
+                                                    <!-- <viz.data:DimensionDefinition name="자재명" value="{Maktx}" />           -->
+                                                    <viz.data:DimensionDefinition name="생산오더ID" value="{Aufnr}" />      
+                                                </viz.data:dimensions>
+                                            
+                                                <viz.data:measures>
+                                                    <viz.data:MeasureDefinition name="생산량" value="{Pdquan}" />
+                                                    <viz.data:MeasureDefinition name="폐기량" value="{Pdban}" />
+                                                    <viz.data:MeasureDefinition name="최종 생산량" value="{Fnpd}" />
+                                                    
+                                                    
+                                                </viz.data:measures>
+                                            </viz.data:FlattenedDataset>
+                                        </viz:dataset>
+
+                                        <viz:feeds>
+                                            <viz.feeds:FeedItem id='valueAxisFeed'    uid="valueAxis"    type="Measure"   values="생산량,폐기량,최종 생산량" />
+                                            <viz.feeds:FeedItem id="categoryAxisFeed" uid="categoryAxis" type="Dimension" values="자재코드,생산오더ID" />
+                                            <!-- <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="항공편" /> -->
+                                        </viz:feeds>
+                                    </viz:VizFrame>
+                                </cm:content>
+                            </cm:ChartContainerContent>
+
+                            
+                            
+                        </cm:content>
+
+                    </cm:ChartContainer>
+                </layout:fixContent>
+
+            </layout:FixFlex>
+
+        </content>
+    </Page>
+</mvc:View>

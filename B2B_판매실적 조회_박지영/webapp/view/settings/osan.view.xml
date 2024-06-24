@@ -1,0 +1,215 @@
+<mvc:View
+	controllerName="sync.ea.company2.controller.settings.MasterSettings"
+	xmlns="sap.uxap"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	
+	<ObjectPageLayout id="objectPageLayout">
+		<headerContent>
+			<m:Image
+				src="https://i.ibb.co/TM8hVhp/12-2x.png"
+				width="100%"
+				height="auto"
+			/>
+		</headerContent>
+		<sections>
+			<ObjectPageSection>
+				<subSections>
+					<!-- <ObjectPageSubSection>
+						<blocks>
+							<l:BlockLayout
+								id="BlockLayout"
+								background="Default">
+								<l:BlockLayoutRow>
+									<l:BlockLayoutCell class="verticalLayoutWithBackground7 container" />
+								</l:BlockLayoutRow>
+							</l:BlockLayout>
+						</blocks>
+					</ObjectPageSubSection> -->
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection>
+				<subSections>
+					<ObjectPageSubSection
+						id="shopOwnerId"
+						title="{i18n>shopOwnerTitle}"
+					>
+						<blocks>
+							<ObjectPageLazyLoader id="shopOwnerLazyLoader">
+								<f:SimpleForm
+									title="{i18n>editOwnerDetailTitle}"
+									columnsL="2"
+									columnsM="2"
+									editable="true"
+									layout="ResponsiveGridLayout"
+								>
+									<f:content>
+										<core:Title text="{i18n>ownerAddress}" />
+										<m:Label
+											text="{i18n>ownerFirstName}"
+											labelFor="firstNameInput"
+										/>
+										<m:Input
+											id="firstNameInput"
+											type="Text"
+											width="100%"
+											value="김건우"
+											editable="false"
+										/>
+										
+										<m:Label
+											labelFor="addressStreetInput"
+											text="{i18n>ownerStreet}"
+										/>
+										<m:Input
+											id="addressStreetInput"
+											type="Text"
+											width="100%"
+											value="경기 오산시 오산로190번길 15"
+											editable="false"
+										/>
+										<m:Label
+											labelFor="addressTownInput"
+											text="{i18n>ownerZipCode}"
+										/>
+										
+										<core:Title text="{i18n>ownerContact}" />
+										<m:Label
+											labelFor="phoneNumberInput"
+											text="{i18n>ownerMobile}"
+										/>
+										<m:Input
+											id="phoneNumberInput"
+											type="Tel"
+											width="100%"
+											value="+82 10 7933 7015"
+											editable="false"
+										/>
+										<m:Label
+											labelFor="faxNumberInput"
+											text="{i18n>ownerFax}"
+										/>
+										<m:Input
+											id="faxNumberInput"
+											type="Tel"
+											width="100%"
+											value="+82 987 4321"
+											editable="false"
+										/>
+										<m:Label
+											labelFor="emailInput"
+											text="{i18n>mail}"
+										/>
+										<m:Input
+											id="emailInput"
+											type="Email"
+											width="100%"
+											value="bs.choi@isottire.com"
+											editable="false"
+										/>
+									</f:content>
+								</f:SimpleForm>
+							</ObjectPageLazyLoader>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection>
+				<subSections>
+					<ObjectPageSubSection
+						id="shopConfigurationId"
+						title="{i18n>shopConfigurationTitle}"
+					>
+						<blocks>
+							<ObjectPageLazyLoader id="shopConfigurationLazyLoader">
+								<f:SimpleForm
+									title="{i18n>editSystemConfigurationTitle}"
+									columnsL="2"
+									columnsM="2"
+									editable="true"
+									layout="ResponsiveGridLayout"
+								>
+									<f:content>
+										<core:Title text="{i18n>storeSettings}" />
+										<m:Label
+											labelFor="storeNameInput"
+											text="{i18n>storeName}"
+										/>
+										<m:Input
+											id="storeNameInput"
+											type="Text"
+											width="100%"
+											value="오산 직영점"
+											editable="false"
+										/>
+										<m:Label
+											labelFor="storeDefaultLanguageInput"
+											text="{i18n>storeDefaultLanguage}"
+										/>
+										<m:Input
+											id="storeDefaultLanguageInput"
+											type="Text"
+											width="100%"
+											value="Korean"
+											editable="false"
+										/>
+										<m:Label
+											labelFor="storeCodeInput"
+											text="{i18n>storeCode}"
+										/>
+										<m:Input
+											id="storeCodeInput"
+											type="Text"
+											width="100%"
+											value="10006"
+											editable="false"
+										/>
+										<core:Title text="{i18n>StoreContact}" />
+										<m:Label
+											labelFor="storeWebsiteInput"
+											text="{i18n>storeWebSite}"
+										/>
+										<m:Input
+											id="storeWebsiteInput"
+											type="Url"
+											width="100%"
+											value="http://www.isot.com"
+											editable="false"
+										/>
+										<m:Label
+											labelFor="storePhoneNumberInput"
+											text="{i18n>storePhone}"
+										/>
+										<m:Input
+											type="Tel"
+											id="storePhoneNumberInput"
+											width="100%"
+											value="+031 374 4427"
+											editable="false"
+										/>
+										<m:Label
+											labelFor="storeMailInput"
+											text="{i18n>mail}"
+										/>
+										<m:Input
+											type="Email"
+											id="storeMailInput"
+											width="100%"
+											value="isotinfo@isottire.com"
+											editable="false"
+										/>
+									</f:content>
+								</f:SimpleForm>
+							</ObjectPageLazyLoader>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>

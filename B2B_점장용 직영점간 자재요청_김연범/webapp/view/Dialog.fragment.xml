@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:f="sap.ui.layout.form"
+>
+    <Dialog id="idDialog" 
+            icon="sap-icon://create"
+            title="제품 이전 요청서">
+        <content>
+            <f:SimpleForm 
+                layout="ResponsiveGridLayout"
+                labelSpanS="4"
+                width="550px">
+
+                <f:content>
+                    <!-- 이전 정보 -->
+                    <core:Title text="{i18n>labelPick}" />
+                    <Label text="{i18n>labelPname2}" />
+                    <ComboBox
+                        id="idComboBox"
+                        width="10rem"
+                        selectedKey="{new>/Data/Pname2}"
+                        items="{
+                            path: 'shopModel>/Shops',
+                            templateShareable: true
+                        }">
+                        <core:Item id="idComboBoxItem" key="{shopModel>key}" text="{shopModel>name}" />
+                    </ComboBox>
+                    <Label text="{i18n>labelMaktx}" />
+                    <Text text="{new>/Data/Maktx}" width="20rem" />
+                    <Label text="{i18n>labelElcdt}" />
+                    <Text text="{path: 'new>/Data/Elcdt', type: 'sap.ui.model.odata.type.DateTime', formatOptions: { pattern: 'yyyy-MM-dd' }}" />
+                    <Label text="{i18n>labeltext}" />
+                    <DatePicker displayFormat="dd.MM.yyyy" valueFormat="yyyy-MM-dd" required="true" width="20rem" />
+                    <Label text="{i18n>labelAuqua2}" />
+                    <Input value="{new>/Data/Auqua2}" maxLength="10" width="10rem" />
+                    <Label text="{i18n>labelMeins}" />
+                    <Text text="{new>/Data/Meins}" width="8rem" />
+                </f:content>
+
+
+                <f:content>
+                    <!-- 이전 정보 -->
+                    <core:Title text="{i18n>labelShop}" />
+                    <Label text="{i18n>labelid}" />
+                    <Text text="{new>/Data/Bookid}" width="8rem" />
+                    <Label text="{i18n>labelElcdt}" />
+                    <Text text="{path: 'new>/Data/Elcdt', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}" />
+                    <Label text="{i18n>labelPname2}" />
+                    <Text text="{new>/Data/Pname1}" width="8rem" />
+                    <Label text="{i18n>labelMaktx}" />
+                    <Text text="{new>/Data/Maktx}" width="20rem" />
+                    <Label text="{i18n>labelAuqua}" />
+                    <Text text="{new>/Data/Auqua}" width="8rem" />
+                    <Label text="{i18n>labelMeins}" />
+                    <Text text="{new>/Data/Meins}" width="8rem" />
+                </f:content>
+                <f:content>
+                </f:content>
+
+            </f:SimpleForm>
+        </content>
+        <buttons>
+            <Button text="요청" press="onSave" />
+            <Button text="닫기" press="onClose" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

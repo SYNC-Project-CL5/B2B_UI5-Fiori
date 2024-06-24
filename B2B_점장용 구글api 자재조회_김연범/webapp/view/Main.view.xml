@@ -1,0 +1,42 @@
+<mvc:View controllerName="sync.ea.main.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+    <App id="app">
+        <Page id="page" title="{i18n>title}">
+            <headerContent>
+                <Button text="리스트 보기" press="onShowListPress" />
+                <Button text="지도 보기" press="onShowMapPress" />
+                <Button text="재고이전 요청" press="onShowMapPress" />
+            </headerContent>
+            <content>
+                <HBox id="hboxMain" fitContainer="true">
+                    <VBox id="vboxList" width="30%">
+                        <List
+                            id="idPlantList"
+                            items="{
+                                path: 'geoModel>/spots'
+                            }"
+                            width="auto">
+                            <items>
+                                <StandardListItem
+                                    id="plantListItem"
+                                    title="{geoModel>Pname1}"
+                                    description="총 재고량: {geoModel>Calqty} {geoModel>Meins}"
+                                    type="Active"
+                                    press="onListItemPress" />
+                            </items>
+                        </List>
+                    </VBox>
+                    <VBox id="vboxMap" width="70%">
+                        <html:div id="map" style="width:100%; height:800px;"></html:div>
+                    </VBox>
+                </HBox>
+                <VBox id="vboxFlexible" visible="false" width="100%">
+                    <!-- 플렉서블 화면의 내용을 여기에 추가 -->
+                    
+                </VBox>
+            </content>
+        </Page>
+    </App>
+</mvc:View>

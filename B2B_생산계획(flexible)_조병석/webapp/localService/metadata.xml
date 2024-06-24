@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri=".1/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".1/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".1/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".1/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".1/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZEA_PPCDSV01_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZEA_PPCDSV01Type" sap:label="[PP] 생산계획 CDS View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Planid"/>
+                </Key>
+                <Property Name="Planid" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:label="생산계획 ID"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="플랜트ID"/>
+                <Property Name="Pdpdat" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="생산계획년도"/>
+                <Property Name="Pdpli" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="생산계획내역"/>
+                <Property Name="Loekz" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="삭제플래그"/>
+                <NavigationProperty Name="to_ProductionPlan" Relationship="ZEA_PPCDSV01_CDS.assoc_55B1D7995DF2630753A1755D69E1D7B5" FromRole="FromRole_assoc_55B1D7995DF2630753A1755D69E1D7B5" ToRole="ToRole_assoc_55B1D7995DF2630753A1755D69E1D7B5"/>
+            </EntityType>
+            <EntityType Name="ZEA_PPT010Type" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PLANID"/>
+                    <PropertyRef Name="PLANINDEX"/>
+                </Key>
+                <Property Name="PLANID" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:label="생산계획 ID"/>
+                <Property Name="PLANINDEX" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label="생산계획 INDEX"/>
+                <Property Name="BOMID" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="BOM ID"/>
+                <Property Name="MATNR" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="자재코드"/>
+                <Property Name="WERKS" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="플랜트ID"/>
+                <Property Name="PLANQTY1" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="1월 계획수량"/>
+                <Property Name="PLANQTY2" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="2월 계획수량"/>
+                <Property Name="PLANQTY3" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="3월 계획수량"/>
+                <Property Name="PLANQTY4" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="4월 계획수량"/>
+                <Property Name="PLANQTY5" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="5월 계획수량"/>
+                <Property Name="PLANQTY6" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="6월 계획수량"/>
+                <Property Name="PLANQTY7" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="7월 계획수량"/>
+                <Property Name="PLANQTY8" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="8월 계획수량"/>
+                <Property Name="PLANQTY9" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="9월 계획수량"/>
+                <Property Name="PLANQTY10" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="10월 계획수량"/>
+                <Property Name="PLANQTY11" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="11월 계획수량"/>
+                <Property Name="PLANQTY12" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MEINS" sap:label="12월 계획수량"/>
+                <Property Name="MEINS" Type="Edm.String" MaxLength="3" sap:label="Unit" sap:semantics="unit-of-measure"/>
+                <Property Name="LOEKZ" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="삭제플래그"/>
+                <Property Name="ERNAM" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="오브젝트 생성자 이름"/>
+                <Property Name="ERDAT" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="레코드 생성일"/>
+                <Property Name="ERZET" Type="Edm.Time" Precision="0" sap:label="입력시간"/>
+                <Property Name="AENAM" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="오브젝트 변경자 이름"/>
+                <Property Name="AEDAT" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="최종 변경일"/>
+                <Property Name="AEZET" Type="Edm.Time" Precision="0" sap:label="변경시간"/>
+            </EntityType>
+            <Association Name="assoc_55B1D7995DF2630753A1755D69E1D7B5" sap:content-version="1">
+                <End Type="ZEA_PPCDSV01_CDS.ZEA_PPCDSV01Type" Multiplicity="1" Role="FromRole_assoc_55B1D7995DF2630753A1755D69E1D7B5"/>
+                <End Type="ZEA_PPCDSV01_CDS.ZEA_PPT010Type" Multiplicity="*" Role="ToRole_assoc_55B1D7995DF2630753A1755D69E1D7B5"/>
+            </Association>
+            <EntityContainer Name="ZEA_PPCDSV01_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZEA_PPCDSV01" EntityType="ZEA_PPCDSV01_CDS.ZEA_PPCDSV01Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZEA_PPT010" EntityType="ZEA_PPCDSV01_CDS.ZEA_PPT010Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_55B1D7995DF2630753A1755D69E1D7B5" Association="ZEA_PPCDSV01_CDS.assoc_55B1D7995DF2630753A1755D69E1D7B5" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEA_PPCDSV01" Role="FromRole_assoc_55B1D7995DF2630753A1755D69E1D7B5"/>
+                    <End EntitySet="ZEA_PPT010" Role="ToRole_assoc_55B1D7995DF2630753A1755D69E1D7B5"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZEA_PPCDSV01_CDS.ZEA_PPCDSV01_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://210.16.199.140:8001/sap/opu/odata/sap/ZEA_PPCDSV01_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://210.16.199.140:8001/sap/opu/odata/sap/ZEA_PPCDSV01_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

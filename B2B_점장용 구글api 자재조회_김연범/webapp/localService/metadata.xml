@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZEA_MMT_190_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Plant" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Werks"/>
+                </Key>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="플랜트ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="회사코드" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pname1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="플랜트명" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Adrnr" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="회사주소" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ptelno" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="회사전화번호" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Empname" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="사원 이름" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="to_Storage" Relationship="ZEA_MMT_190_SRV.Asso_Plant_storage" FromRole="FromRole_Asso_Plant_storage" ToRole="ToRole_Asso_Plant_storage"/>
+            </EntityType>
+            <EntityType Name="StorageMaktx" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="자재코드" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="자재명" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="플랜트ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Scode" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="저장위치 코드" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Calqty" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="Meins" sap:label="수량" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <Association Name="Asso_Plant_storage" sap:content-version="1">
+                <End Type="ZEA_MMT_190_SRV.Plant" Multiplicity="1" Role="FromRole_Asso_Plant_storage"/>
+                <End Type="ZEA_MMT_190_SRV.StorageMaktx" Multiplicity="*" Role="ToRole_Asso_Plant_storage"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Asso_Plant_storage">
+                        <PropertyRef Name="Werks"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Asso_Plant_storage">
+                        <PropertyRef Name="Werks"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZEA_MMT_190_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="PlantSet" EntityType="ZEA_MMT_190_SRV.Plant" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="StorageMaktxSet" EntityType="ZEA_MMT_190_SRV.StorageMaktx" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="Asso_Plant_storageSet" Association="ZEA_MMT_190_SRV.Asso_Plant_storage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PlantSet" Role="FromRole_Asso_Plant_storage"/>
+                    <End EntitySet="StorageMaktxSet" Role="ToRole_Asso_Plant_storage"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://210.16.199.140:8001/sap/opu/odata/sap/ZEA_MMT_190_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://210.16.199.140:8001/sap/opu/odata/sap/ZEA_MMT_190_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

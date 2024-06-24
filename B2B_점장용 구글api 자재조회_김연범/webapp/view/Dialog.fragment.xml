@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="storageDialog" title="상세조회">
+        <content>
+            <VBox>
+                <Text id="dialogPname1" text="Pname1: " class="boldText"/>
+                <Text id="dialogCalqty" text="총 자재량: "/>
+                <List id="storageList" items="{storageModel>/}">
+                    <items>
+                        <StandardListItem id="storageListItem" title="{storageModel>Maktx}" description="Quantity: {storageModel>Calqty} {storageModel>Meins}" />
+                    </items>
+                </List>
+            </VBox>
+        </content>
+        <endButton>
+            <Button id="closeDialogButton" text="Close" press="onCloseDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

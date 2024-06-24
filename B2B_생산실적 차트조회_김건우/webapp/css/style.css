@@ -1,0 +1,6 @@
+/* Enter your custom styles here */
+.separator {
+    height: 1px;
+    background-color: green;
+    margin: 10px 0; /* Adjust the margin as needed */
+}

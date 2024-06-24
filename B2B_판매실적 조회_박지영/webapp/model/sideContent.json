@@ -1,0 +1,105 @@
+{
+	"navigation": [
+		{
+			"title": "홈",
+			"icon": "sap-icon://home",
+			"expanded": true,
+			"key": "home",
+			"items": []
+		},
+		{
+			"title": "직영점",
+			"icon": "sap-icon://addresses",
+			"expanded": false,
+			"key": "masterSettings"
+		,
+			"items": []
+		},
+		{
+			"title": "판매데이터",
+			"icon": "sap-icon://line-chart",
+			"expanded": true,
+			"key": "statistics",
+			"items": [
+				{
+					"title": "직영점별 판매실적",
+					"key": "Usage Statistics was pressed"
+				}
+			]
+		},
+		{
+			"title": "재고관리",
+			"icon": "sap-icon://product",
+			"expanded": true,
+			"key": "statistics",
+			"items": [
+				{
+					"title": "재고현황 조회",
+					"key": "재고를 조회합니다"
+				},
+				{
+					"title": "재고이전 요청",
+					"key": "재고이전을 요청합니다"
+				},
+				{
+					"title": "재고이전 결재",
+					"key": "재고요청건을 결재합니다"
+				}
+			]
+		}
+	],
+	"fixedNavigation": [
+		{
+			"title": "ISOT 홈페이지",
+			"icon": "sap-icon://chain-link",
+			"key": "Important Links was pressed"
+		},
+		{
+			"title": "로그아웃",
+			"icon": "sap-icon://role",
+			"key": "Legal was pressed"
+		}
+	],
+	"masterSettings": [
+		{
+			"title": "아이소티 본사",
+			"key": "systemSettings",
+			"selected": true
+		},
+		{
+			"title": "구로 직영점",
+			"key": "orderSettings",
+			"selected": false
+		},
+		{
+			"title": "평택 직영점",
+			"key": "ptaek",
+			"selected": false
+		},
+		{
+			"title": "종로 직영점",
+			"key": "jongro",
+			"selected": false
+		},
+		{
+			"title": "인천 직영점",
+			"key": "incheon",
+			"selected": false
+		},
+		{
+			"title": "오산 직영점",
+			"key": "osan",
+			"selected": false
+		},
+		{
+			"title": "대구 직영점",
+			"key": "daegu",
+			"selected": false
+		},
+		{
+			"title": "대전 직영점",
+			"key": "daejun",
+			"selected": false
+		}
+	]
+}

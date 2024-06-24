@@ -1,0 +1,29 @@
+<mvc:View controllerName="sync.ea.stg.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    height="100%"
+    displayBlock="true">
+
+    <f:FlexibleColumnLayout
+    id="flexibleColumnLayout"
+    stateChange=".onStateChanged"
+    backgroundDesign="Solid"
+    layout="{comp>/layout}"/>
+
+    <!-- <App id="app"> -->
+        <!-- <f:FlexibleColumnLayout 
+            id="idFlexibleColumnLayout"
+            backgroundDesign="Solid"
+        >
+
+            <f:beginColumnPages>
+                <mvc:XMLView id="beginView" viewName="sync.ea.stg.view.stg"/>
+            </f:beginColumnPages>
+            <f:midColumnPages>
+				    <mvc:XMLView id="detailView" viewName="sync.ea.stg.view.Detail"/>
+			    </f:midColumnPages>
+        </f:FlexibleColumnLayout> -->
+   <!-- </App> -->
+</mvc:View>

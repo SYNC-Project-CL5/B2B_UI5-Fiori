@@ -1,0 +1,67 @@
+<mvc:View controllerName="transporting.tfr.controller.TFR"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:t="sap.ui.table"
+    height="100%">
+    <Page id="page" title="{i18n>title}" >
+        <content>
+            <t:Table id="idBookingTable"
+                     rows="{/BookingIDSet}"
+                     selectionMode="Single"
+                     rowSelectionChange=".RowSelector">
+                <t:columns>
+                    <t:Column width="2em">
+
+                    </t:Column>
+                    <t:Column>
+                        <Label text="{i18n>labelBookid}" />
+                        <t:template>
+                            <ObjectIdentifier title="{Bookid}-({Pname1})"/>
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="{i18n>labelElcdt}" />
+                        <t:template>
+                            <!-- <ObjectIdentifier  title="{Elcdt}" /> -->
+                            <ObjectIdentifier  title="{
+                                path: 'Elcdt', 
+                                type: 'sap.ui.model.odata.type.DateTime',
+                                formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="{i18n>labelMaktx}" />
+                        <t:template>
+                            <Text text="{Maktx}" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column width="5em">
+                        <Label text="{i18n>labelAuqua}" />
+                        <t:template>
+                            <Text text="{Auqua}" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="{i18n>labelMeins}" />
+                        <t:template>
+                            <Text text="{Meins}" />
+                        </t:template>
+                    </t:Column>
+                </t:columns>
+            </t:Table>
+        </content>
+
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    icon="sap-icon://create"
+                    text="재고이전 요청하기"
+                    type="Accept"
+                    press="onCreate" />
+
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

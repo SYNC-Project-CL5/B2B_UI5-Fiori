@@ -1,0 +1,129 @@
+<mvc:View controllerName="sync.ea.sales2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:viz="sap.viz.ui5.controls" 
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:cm="sap.suite.ui.commons"
+    height="100%"
+    >
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <layout:FixFlex 
+                id="idFixFlex" 
+                minFlexSize="500">
+
+                <layout:fixContent>
+                    <Text text="" />
+                </layout:fixContent>
+                <layout:fixContent >
+                    <cm:ChartContainer 
+                        class="sapUiResponsiveContentPadding"
+                        id="idChartContainer"
+                        showFullScreen="true"
+                        showLegend="true"
+                        showLegendButton="true"
+                        showZoom="true"
+                        title="㈜아이소티 타이어"
+                        autoAdjustHeight="false"
+                    >
+                        <cm:content>
+                            <cm:ChartContainerContent 
+                                icon="sap-icon://bar-chart"
+                                title="차트" 
+                            >
+                                <cm:content>
+                                    <!-- 이 안에 차트 그려줄 예정 -->
+                                    <viz:Popover id="idPopOver"></viz:Popover>
+                                    <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                                        height='570px' width="100%" vizType='bar' title='차트' >
+                                        <viz:dataset>
+                                            <viz.data:FlattenedDataset data="{/Sales001Set}">
+                                                <viz.data:dimensions>
+                                                    <!-- <viz.data:DimensionDefinition name="판매실적년도" value="{SvYear}" />          
+                                                    <viz.data:DimensionDefinition name="플랜트ID" value="{Werks}" />          
+                                                    <viz.data:DimensionDefinition name="자재코드" value="{Matnr}" />-->
+                                                    <viz.data:DimensionDefinition name="판매실적년도" value="{SvYear}" />          
+                                                    <viz.data:DimensionDefinition name="직영점" value="{Pname1}" />          
+                                                    <viz.data:DimensionDefinition name="자재명" value="{Maktx}" />   
+                                                </viz.data:dimensions>
+                                                <viz.data:measures>
+                                                    <viz.data:MeasureDefinition name="총 매출 실적" value="{Totsal}" />
+                                                </viz.data:measures>
+                                            </viz.data:FlattenedDataset>
+                                        </viz:dataset>
+                                        <!-- vizProperties를 사용하여 차트의 제목을 지정합니다. -->
+                                                
+                                        <viz:feeds>
+                                            <viz.feeds:FeedItem id='valueAxisFeed'    uid="valueAxis"    type="Measure"   values="총 매출 실적" />
+                                            <viz.feeds:FeedItem id="categoryAxisFeed" uid="categoryAxis" type="Dimension" values="판매실적년도,직영점,자재명" />
+
+                                        </viz:feeds>
+                                    </viz:VizFrame>
+                                </cm:content>
+                            </cm:ChartContainerContent>
+                            <cm:ChartContainerContent 
+                                icon="sap-icon://table-view"
+                                title="데이터"
+                            >
+                                <cm:content>
+                                    <!-- 이 안에는 차트에 사용된 데이터를 테이블로 보여줄 예정 -->
+                                    <Table items="{/Sales001Set}">
+                                        <columns>
+                                            <Column ><Label text="판매실적년도 &amp; 직영점" /></Column>
+                                            <Column ><Label text="자재코드 &amp; 자재명" /></Column>
+                                            <!-- <Column ><Label text="자재코드" /></Column>
+                                            <Column ><Label text="자재명" /></Column> -->
+                                            <Column ><Label text="총 판매 실적" /></Column> 
+
+                                            <Column ><Label text="1월" /></Column> 
+                                            <Column ><Label text="2월" /></Column> 
+                                            <Column ><Label text="3월" /></Column> 
+                                            <Column ><Label text="4월" /></Column> 
+                                            <Column ><Label text="5월" /></Column> 
+                                            <Column ><Label text="6월" /></Column> 
+                                            <Column ><Label text="7월" /></Column> 
+                                            <Column ><Label text="8월" /></Column> 
+                                            <Column ><Label text="9월" /></Column> 
+                                            <Column ><Label text="10월" /></Column> 
+                                            <Column ><Label text="11월" /></Column> 
+                                            <Column ><Label text="12월" /></Column> 
+                                            <Column ><Label text="단위" /></Column> 
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem >
+                                                <ObjectIdentifier title="{SvYear}" text="{Pname1}"/>
+                                                <ObjectIdentifier title="{Matnr}" text="{Maktx}"  />
+                                                <!-- <ObjectIdentifier title="{Matnr}" />
+                                                <ObjectIdentifier title="{Maktx}" /> -->
+                                                <ObjectNumber number="{Totsal}" unit="{Waers}"/>
+
+                                                <ObjectNumber number="{Svqty1}" />
+                                                <ObjectNumber number="{Svqty2}" />
+                                                <ObjectNumber number="{Svqty3}" />
+                                                <ObjectNumber number="{Svqty4}" />
+                                                <ObjectNumber number="{Svqty5}" />
+                                                <ObjectNumber number="{Svqty6}" />
+                                                <ObjectNumber number="{Svqty7}" />
+                                                <ObjectNumber number="{Svqty8}" />
+                                                <ObjectNumber number="{Svqty9}" />
+                                                <ObjectNumber number="{Svqty10}" />
+                                                <ObjectNumber number="{Svqty11}" />
+                                                <ObjectNumber number="{Svqty12}" />
+                                                <ObjectAttribute text="{Meins}" />
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </cm:content>
+
+                            </cm:ChartContainerContent>
+                        </cm:content>
+
+                    </cm:ChartContainer>   
+                </layout:fixContent>
+
+            </layout:FixFlex>
+        </content>
+    </Page>
+</mvc:View>

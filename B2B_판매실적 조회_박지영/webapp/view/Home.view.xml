@@ -1,0 +1,294 @@
+<mvc:View
+	controllerName="sync.ea.company2.controller.Home"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	height="100%">
+	<Page showHeader="false">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo
+				rootRole="Region"
+				rootLabel="{i18n>Home_rootLabel}"
+				contentRole="Main" 
+				contentLabel="{i18n>Home_contentLabel}"/>
+		</landmarkInfo>
+		<l:BlockLayout
+			id="BlockLayout"
+			background="Default">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell class="verticalLayoutWithBackground6 container" />
+			</l:BlockLayoutRow>
+		<!-- <l:BlockLayout
+			id="BlockLayout"
+			background="Default">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell class="sapUiNoContentPadding">
+					<Image
+						src="{
+							path: 'view>/isPhone',
+							formatter: '.formatter.srcImageValue'
+						}"
+						width="100%"
+						height="100%"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow> -->
+			<!-- <l:BlockLayoutRow>
+				<l:BlockLayoutCell class="sapUiNoContentPadding">
+					<Carousel
+						id="imageCarousel"
+						height="100%"
+						width="100%"
+						loop="true"
+						class="sapUiContentPadding"
+						>
+						<pages>
+							<Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_ventus@2x.jpg" width="100%" height="100%"/>
+							<Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_dynapro@2x.jpg" width="100%" height="100%"/>
+							<Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_kinergy2.jpg" width="100%" height="100%"/>
+							<Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_wintericeptipike@2x.jpg" width="100%" height="100%"/>
+							<Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_vantra@2x.jpg" width="100%" height="100%"/>
+						</pages>
+					</Carousel>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow> -->
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet11"
+					backgroundColorShade="ShadeD">
+					<l:VerticalLayout>
+						<core:Icon
+							src="sap-icon://sales-order"
+							size="2.5rem"
+							color="Default"/>
+						<Title
+							id="administrationTile"
+							text="{i18n>administrationTitle}"
+							level="H3"
+							titleStyle="H2"
+							class="sapUiTinyMarginTopBottom font-bold"/>
+						<Text
+							text="{i18n>administrationContent}"
+							class="sapUiTinyMarginBottom font-normal"/>
+						<Link
+							text="{i18n>accessLink_sales_plan}"
+							tooltip="{i18n>accessAdministrationLink}"
+							press="onSalesPerfPress"
+							class="font-medium"/>
+						<Link
+							text="{i18n>accessLink_sales_b2c}"
+							tooltip="{i18n>accessAdministrationLink}"
+							press="onSalesB2cPress"
+							class="font-medium"/>
+						<Link
+							text="{i18n>accessLink_sales_price}"
+							tooltip="{i18n>accessAdministrationLink}"
+							press="onSalesPricePress"
+							class="font-medium"/>
+						
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet11"
+					backgroundColorShade="ShadeB">
+					<l:VerticalLayout>
+						<core:Icon
+							src="sap-icon://add-product"
+							size="2.5rem"
+							color="Default"/>
+						<Title
+							id="productTile"
+							text="{i18n>productTitle}"
+							level="H3"
+							titleStyle="H2"
+							class="sapUiTinyMarginTopBottom font-bold"
+							/>
+						<Text
+							text="{i18n>productContent}"
+							class="sapUiTinyMarginBottom font-normal"/>
+						<Link
+							text="{i18n>accessLink_accept}"
+							tooltip="{i18n>accessProductsLink}"
+							press="onProductsMoveAccessPress"
+							class="font-medium" />
+						<Link
+							text="{i18n>accessLink_products}"
+							tooltip="{i18n>accessProductsLink}"
+							press="onProductsMoveRequestPress"
+							class="font-medium"/>
+						<Link
+							text="{i18n>learnLink_products}"
+							tooltip="{i18n>learnProductsTooltip}"
+							class="font-medium"
+							press="onProductsAmountPress"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet11"
+					backgroundColorShade="ShadeD">
+					<l:VerticalLayout>
+						<core:Icon
+							src="sap-icon://customer-financial-fact-sheet"
+							size="2.5rem"
+							color="Default"/>
+						<Title
+							text="{i18n>revenueTitle}"
+							level="H3"
+							titleStyle="H2"
+							class="sapUiTinyMarginTopBottom font-bold"/>
+						<Text
+							text="{i18n>revenueContent}"
+							class="sapUiTinyMarginBottom font-normal"/>
+						<Link
+							text="{i18n>accessLink_fi}"
+							tooltip="{i18n>accessRevenueLink}"
+							class="font-medium"
+							press="onIncomePress"/>
+						<Link
+							text="{i18n>accessLink_exchange}"
+							tooltip="{i18n>accessRevenueLink}"
+							class="font-medium"
+							press="onExchangePress"/>
+						
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet11"
+					backgroundColorShade="ShadeB">
+					<l:VerticalLayout>
+						<core:Icon
+							src="sap-icon://supplier"
+							size="2.5rem"
+							color="Default"/>
+						<Title
+							text="{i18n>supplierTitle}"
+							level="H3"
+							titleStyle="H2"
+							class="sapUiTinyMarginTopBottom font-bold"/>
+						<Text
+							text="{i18n>supplierContent}"
+							class="sapUiTinyMarginBottom font-normal"/>
+						<Link
+							text="{i18n>accessLink_prod_plan}"
+							tooltip="{i18n>accessSuppliersLink}"
+							class="font-medium"
+							press="onProducePlanPress"/>
+						<Link
+							text="{i18n>accessLink_prod_order}"
+							tooltip="{i18n>accessSuppliersLink}"
+							class="font-medium"
+							press="onProduceOrderPress"/>
+						<Link
+							text="{i18n>accessLink_prod_perf}"
+							tooltip="{i18n>accessSuppliersLink}"
+							class="font-medium"
+							press="onProducePerfPress"/>
+						
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet11"
+					backgroundColorShade="ShadeB">
+					<l:VerticalLayout>
+						<core:Icon
+							src="sap-icon://thumb-up"
+							size="2.5rem"
+							color="Default"/>
+						<Title
+							text="{i18n>socialMediaTitle}"
+							level="H3"
+							titleStyle="H2"
+							class="sapUiTinyMarginTopBottom font-bold"/>
+						<Text
+							text="{i18n>socialMediaContent}"
+							class="sapUiTinyMarginBottom font-normal"/>
+						<Link
+							text="{i18n>accessLink_socialMedia}"
+							tooltip="{i18n>accessSocialLink}"
+							press="onKakaotalkPress" 
+							class="font-medium"/>
+						<Link
+							text="{i18n>accessLink_socialMedia_plant}"
+							tooltip="{i18n>accessSocialLink}"
+							press="onKakaotalkPlantPress" 
+							class="font-medium"/>
+						
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet9"
+					backgroundColorShade="ShadeA"
+					width="3">
+					<Table
+						items="{path:'customer>/customers', templateShareable: false}"
+						fixedLayout="false">
+						<headerToolbar>
+							<Toolbar design="Transparent">
+								<Title
+									text="{i18n>customerOverviewTitle}"
+									level="H3"
+									class="font-medium" />
+							</Toolbar>
+						</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="{i18n>customerName}" class="font-bold" />
+								</Column>
+								<Column minScreenWidth="Tablet">
+									<Text text="{i18n>productId}" class="font-medium" />
+								</Column>
+								<Column minScreenWidth="Desktop" hAlign="End">
+									<Text text="{i18n>lastPurchase}" class="font-medium" />
+								</Column>
+								<Column hAlign="Center">
+									<Text text="{i18n>payment}" class="font-medium" />
+								</Column>
+								<Column hAlign="End">
+									<Text text="{i18n>amount}" class="font-medium" />
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{customer>name}" class="font-medium" />
+										<Text text="{customer>productId}" class="font-medium" />
+										<Text text="{customer>lastPurchase}" class="font-medium" />
+										<ObjectNumber
+											number="{customer>payment}"
+											state="{customer>state}"
+											class="font-medium" />
+										<ObjectNumber
+											number="{
+												parts:[{path:'customer>amount'},{path:'customer>currencyCode'}],
+												type: 'sap.ui.model.type.Currency',
+												formatOptions: {showMeasure: false}
+											}"
+											unit="{customer>currencyCode}" 
+											class="font-medium" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+                <l:BlockLayoutCell>
+                    <l:VerticalLayout class="centerAlign"> 
+                        <Title text="Our Brands" level="H2" titleStyle="H1" class="font-medium" />
+                        <Carousel class="sapUiContentPadding" loop="true">
+                            <pages>
+                                <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_ventus@2x.jpg" class="hover-zoom"/>
+                                <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_dynapro@2x.jpg" class="hover-zoom"/>
+                                <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_kinergy2.jpg" class="hover-zoom"/>
+                                <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_wintericeptipike@2x.jpg" class="hover-zoom"/>
+                                <Image src="https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_vantra@2x.jpg" class="hover-zoom"/>
+                            </pages>
+                        </Carousel>
+                    </l:VerticalLayout>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>
